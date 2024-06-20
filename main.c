@@ -141,3 +141,25 @@ void reiniciarJogo(Pilha hastes[3], int numDiscos) {
     }
     proximoPasso = 0;
 }
+
+// Função principal
+int main() {
+    int numDiscos, movimentos = 0;
+    Pilha hastes[3];
+
+    // Pedir ao usuário o número de discos
+    printf("Digite o número de discos: ");
+    scanf("%d", &numDiscos);
+
+    reiniciarJogo(hastes, numDiscos);
+
+    // Calcular o número mínimo de movimentos
+    int minMovimentos = pow(2, numDiscos) - 1;
+    printf("O número mínimo de movimentos é: %d\n", minMovimentos);
+
+    printf("Você deseja mostrar um passo a passo de como resolver a Torre de Hanói? (S/N): ");
+    char opcao;
+    scanf(" %c", &opcao);
+    if (opcao == 'S' || opcao == 's') {
+        resolverTorreHanoi(numDiscos, 0, 2, 1);
+    }
