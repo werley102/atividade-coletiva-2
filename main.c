@@ -163,3 +163,10 @@ int main() {
     if (opcao == 'S' || opcao == 's') {
         resolverTorreHanoi(numDiscos, 0, 2, 1);
     }
+int origem, destino;
+    char origemChar, destinoChar;
+    while (1) {
+        if (opcao == 'S' || opcao == 's') {
+            if (passosSolucao[proximoPasso][0] != '\0') {
+                printf("%s\n", passosSolucao[proximoPasso]);
+                proximoPasso++;
