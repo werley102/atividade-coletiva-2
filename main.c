@@ -77,3 +77,5 @@ void realizarMovimento(Pilha hastes[3], int origem, int destino) {
         empilhar(&hastes[destino], discoMover);
     }
 }
+char passosSolucao[1000][100];
+int proximoPasso = 0;
