@@ -63,3 +63,7 @@ void imprimirHastes(Pilha hastes[3], int numDiscos) {
         printf("\n");
     }
 }
+
+int movimentoValido(Pilha hastes[3], int origem, int destino) {
+    int discoOrigem = topo(&hastes[origem]);
+    int discoDestino = topo(&hastes[destino]);
