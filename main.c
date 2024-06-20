@@ -119,4 +119,15 @@ int verificarFimDeJogo(Pilha hastes[3], int numDiscos) {
         }
     }
 
+    // Verifica se todos os discos estão na torre C
+    int naTorreC = 1;
+    for (int i = 0; i < numDiscos; i++) {
+        if (hastes[2].discos[i] != numDiscos - i) {
+            naTorreC = 0;
+            break;
+        }
+    }
+
+    return naTorreB || naTorreC;
+}
 
