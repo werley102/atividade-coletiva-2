@@ -99,3 +99,11 @@ void resolverTorreHanoi(int numDiscos, int origem, int destino, int auxiliar) {
     adicionarPasso(passo);
     resolverTorreHanoi(numDiscos - 1, auxiliar, destino, origem);
 }
+
+int hasteParaIndice(char haste) {
+    haste = toupper(haste);
+    if (haste == 'A') return 0;
+    if (haste == 'B') return 1;
+    if (haste == 'C') return 2;
+    return -1; // Caso inválido
+}
