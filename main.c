@@ -107,3 +107,14 @@ int hasteParaIndice(char haste) {
     if (haste == 'C') return 2;
     return -1; // Caso inválido
 }
+
+// Função para verificar se todos os discos estão em uma das hastes de destino
+int verificarFimDeJogo(Pilha hastes[3], int numDiscos) {
+    // Verifica se todos os discos estão na torre B
+    int naTorreB = 1;
+    for (int i = 0; i < numDiscos; i++) {
+        if (hastes[1].discos[i] != numDiscos - i) {
+            naTorreB = 0;
+            break;
+        }
+    }
