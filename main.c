@@ -131,3 +131,13 @@ int verificarFimDeJogo(Pilha hastes[3], int numDiscos) {
     return naTorreB || naTorreC;
 }
 
+// Função para reiniciar o jogo
+void reiniciarJogo(Pilha hastes[3], int numDiscos) {
+    for (int i = 0; i < 3; i++) {
+        inicializarPilha(&hastes[i]);
+    }
+    for (int i = numDiscos; i > 0; i--) {
+        empilhar(&hastes[0], i);
+    }
+    proximoPasso = 0;
+}
