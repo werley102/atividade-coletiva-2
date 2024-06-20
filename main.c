@@ -67,3 +67,6 @@ void imprimirHastes(Pilha hastes[3], int numDiscos) {
 int movimentoValido(Pilha hastes[3], int origem, int destino) {
     int discoOrigem = topo(&hastes[origem]);
     int discoDestino = topo(&hastes[destino]);
+
+return discoOrigem != -1 && (discoDestino == -1 || discoOrigem < discoDestino);
+}
