@@ -79,3 +79,23 @@ void realizarMovimento(Pilha hastes[3], int origem, int destino) {
 }
 char passosSolucao[1000][100];
 int proximoPasso = 0;
+void adicionarPasso(char passo[]) {
+    static int indice = 0;
+    strcpy(passosSolucao[indice], passo);
+    indice++;
+}
+
+void resolverTorreHanoi(int numDiscos, int origem, int destino, int auxiliar) {
+    if (numDiscos == 1) {
+        char passo[100];
+        sprintf(passo, "Mova o disco 1 da torre %c para a torre %c", origem + 'A', destino + 'A');
+        adicionarPasso(passo);
+        return;
+    }
+
+    resolverTorreHanoi(numDiscos - 1, origem, auxiliar, destino);
+    char passo[100];
+    sprintf(passo, "Mova o disco %d da torre %c para a torre %c", numDiscos, origem + 'A', destino + 'A');
+    adicionarPasso(passo);
+    resolverTorreHanoi(numDiscos - 1, auxiliar, destino, origem);
+}
