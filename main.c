@@ -118,3 +118,5 @@ int verificarFimDeJogo(Pilha hastes[3], int numDiscos) {
             break;
         }
     }
+
+
