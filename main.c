@@ -70,3 +70,10 @@ int movimentoValido(Pilha hastes[3], int origem, int destino) {
 
 return discoOrigem != -1 && (discoDestino == -1 || discoOrigem < discoDestino);
 }
+
+void realizarMovimento(Pilha hastes[3], int origem, int destino) {
+    int discoMover = desempilhar(&hastes[origem]);
+    if (discoMover != -1) {
+        empilhar(&hastes[destino], discoMover);
+    }
+}
